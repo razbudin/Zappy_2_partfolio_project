@@ -1,0 +1,12 @@
+<h1>Привет, это моя домашняя страничка</h1>
+
+{% for project in projects %}
+
+<h2>{{ project.title }}</h2>
+<p>{{ project.description }}</p>
+<img src="{{ project.image.url }}" hight="300" width="300">
+{% if project.url %}
+<br><a href="{{ project.url }}">Ссылка</a>
+{% endif %}
+
+{% endfor %}
