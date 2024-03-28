@@ -1,10 +1,10 @@
 <h1>Все блоги тут</h1>
 
-
+<a href="{% url 'home' %}">Домашняя страница</a>
 {% for blog in blogs %}
 
-<h1>{{ blog.title }}</h1>
-<p>{{ blog.text }}</p>
-<p>{{ blog.date }}</p>
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+<p>{{ blog.text|safe|truncatechars:150 }}</p>
+<p>{{ blog.date|date:'d E Y' }}</p>
 
 {% endfor %}

@@ -1,4 +1,14 @@
-<h1>Привет, это моя домашняя страничка</h1>
+{% extends 'portfolioapp/base.html' %}
+
+{% block title %}My Home page{% endblock %}
+
+{% block content %}
+    <h1>Привет, это моя домашняя страничка</h1>
+
+{% load static %}
+
+<p><img src="{% static 'portfolioapp/IMG_20190502_121228.jpg' %}" height="400"></p>
+<a href="{% url 'blog:all_blogs' %}">Блог</a>
 
 {% for project in projects %}
 
@@ -9,4 +19,9 @@
 <br><a href="{{ project.url }}">Ссылка</a>
 {% endif %}
 
+
 {% endfor %}
+{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
